@@ -3,11 +3,18 @@ import './App.css';
 import app from "./firebase.init";
 const auth = getAuth(app);
 function App() {
+  const handleEmailBlur = event =>{
+    console.log(event.target.value);
+  }
+  const handlePasswordChange = event =>{
+    console.log(event.target.value);
+  }
   return (
     <div className="App">
       <form>
-        <input type="text" />
-        <input type="password"  name="" id=""/>
+        
+        <input onBlur={handleEmailBlur} type="email" name=""  id="" />
+        <input onChange={handlePasswordChange} type="password"  name="" id=""/>
       </form>
     </div>
   );
