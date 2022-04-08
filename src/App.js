@@ -6,15 +6,20 @@ function App() {
   const handleEmailBlur = event =>{
     console.log(event.target.value);
   }
-  const handlePasswordChange = event =>{
+  const handlePasswordBlur = event =>{
     console.log(event.target.value);
+  }
+  const handleFormSubmit = event =>{
+    console.log('form submit');
+    event.preventDefault();
   }
   return (
     <div className="App">
-      <form>
+      <form onSubmit={ handleFormSubmit}>
         
-        <input onBlur={handleEmailBlur} type="email" name=""  id="" />
-        <input onChange={handlePasswordChange} type="password"  name="" id=""/>
+        <input onBlur={handleEmailBlur} type="email" name=""  id="" /><br></br>
+        <input onBlur={handlePasswordBlur} type="password"  name="" id=""/><br></br>
+        <input type="submit" value="Login" />
       </form>
     </div>
   );
